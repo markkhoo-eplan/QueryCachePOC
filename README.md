@@ -36,8 +36,10 @@ const sequelizeRedis = require('../config/cache');
 
 const PlaygroundModel = sequelizeRedis.getModel(Playground, { ttl: 3 });
 ```
-With `PlaygroundModel` we are using sequelize-redis to wrap the Playground Model. Either 
-regular sequelize methdos can be used or the new cached methods:
+With `PlaygroundModel` we are using sequelize-redis to wrap the Playground Model. 
+Time to Live (`ttl`) is the life time of the cache in seconds.
+
+Either regular sequelize methods can be used or the new cached methods:
 ```js
 const id = req.params.id;
 const cacheId = `id_${id}`;
