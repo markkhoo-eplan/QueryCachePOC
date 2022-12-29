@@ -3,7 +3,7 @@ const { Playground } = require('../models');
 const sequelizeRedis = require('../config/cache');
 
 // ttl is Time-to-Live in seconds
-const PlaygroundModel = sequelizeRedis.getModel(Playground, { ttl: 1 });
+const PlaygroundModel = sequelizeRedis.getModel(Playground, { ttl: 3 });
 
 router.get('/', (req, res) => {
   return res.status(200).json({
